@@ -14,7 +14,7 @@ The page will reload when you make changes. You may also see any lint errors in 
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode. 
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
