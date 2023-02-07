@@ -3,11 +3,32 @@
  * @brief Defines the interface for the dataset dashboard view.
  */
 
-import * as React from "react";
-import Box from "@mui/material/Box";
+import { connect } from "react-redux";
+import React from "react";
+import { fetchDatasetDomains, fetchDatasetTypes } from "../../actions/datasets";
 
-const DatasetDashboard = (props) => {
-  return <Box sx={{ width: "100%" }}></Box>;
+class DatasetDashboard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    props.fetchDatasetDomains();
+  }
+
+  render() {
+    return <div>hello datasets</div>;
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    domains: state.datasetMetadata.domains,
+    types: state.datasetMetadata.types,
+  };
 };
 
-export default DatasetDashboard;
+const mapDispatchToProps = {
+  fetchDatasetDomains,
+  fetchDatasetTypes,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DatasetDashboard);
